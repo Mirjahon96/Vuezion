@@ -1,5 +1,5 @@
 <template>
-  <div class="card-container">
+  <div id="card-container">
     <div class="card" v-for="card in cards" :key="card.text">
       <div class="card-content">
         <div class="row">
@@ -68,58 +68,50 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.card-container {
+#card-container {
   display: flex;
   flex-wrap: wrap;
-}
 
-.card {
-  border-radius: 6px;
-  box-shadow: 0 2px 2px hsla(38, 16%, 76%, 0.5);
-  background-color: #fff;
-  color: #252422;
-  position: relative;
-  z-index: 1;
-  border: none;
-  margin: 2rem 1rem 1rem 1rem;
-  flex: 1;
+  .card {
+    flex: 1;
 
-  &-content {
-    padding: 5px 15px 10px;
+    &-content {
+      padding: 5px 15px 10px;
 
-    .card-body {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 0 10px;
+      .card-body {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 10px;
 
-      .numbers {
-        text-align: right;
+        .numbers {
+          text-align: right;
 
-        p {
-          color: $dark-font-color;
-          margin-bottom: 0;
-        }
+          p {
+            color: $dark-font-color;
+            margin-bottom: 0;
+          }
 
-        h2 {
-          font-size: 28px;
-          font-weight: 500;
-          margin: 0;
+          h2 {
+            font-size: 28px;
+            font-weight: 500;
+            margin: 0;
+          }
         }
       }
-    }
 
-    .divider {
-      width: 100%;
-    }
+      .divider {
+        width: 100%;
+      }
 
-    span {
-      font-size: 14px;
-      color: $lightgrey-font-color;
+      span {
+        font-size: 14px;
+        color: $lightgrey-font-color;
 
-      .fas {
-        margin-right: 4px;
-        font-size: 1rem;
+        .fas {
+          margin-right: 4px;
+          font-size: 1rem;
+        }
       }
     }
   }

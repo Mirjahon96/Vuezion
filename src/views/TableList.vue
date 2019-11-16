@@ -1,18 +1,21 @@
 <template>
-  <div class="main-wrapper">
-    <div class="table-list">
-      <h1>This is an Table List page</h1>
-    </div>
+  <div id="table-list">
+    <Tables />
   </div>
 </template>
 
 <script>
+import Tables from "@/components/Tables.vue";
+
 export default {
   name: "tablelist",
+  components: {
+    Tables
+  },
   data() {
     return {};
   }
 };
 </script>
 
-<style lang="sass" scoped></style>
+<style lang="scss" scoped></style>

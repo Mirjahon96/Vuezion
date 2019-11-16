@@ -4,7 +4,7 @@
       <div class="card-content">
         <div class="card-body">
           <div class="chart">
-            <h4>Users behavior</h4>
+            <h4 class="heading-2">Users behavior</h4>
             <span>24 hours performance</span>
             <apexchart
               width="100%"
@@ -55,9 +55,6 @@ export default {
         },
         xaxis: {
           categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997]
-        },
-        yaxis: {
-          categories: [0, 200, 400, 600, 800, 1000, 1200]
         }
       },
 
@@ -98,17 +95,8 @@ export default {
       .card-body {
         padding: 10px 10px;
 
-        h4 {
-          font-size: 21px;
-          font-weight: 500;
-          margin: 0;
-          color: $dark-font-color;
-        }
-
         // Chart Styles
         .chart {
-          padding: 0.5rem 0;
-
           p {
             color: $dark-font-color;
             margin-bottom: 0;

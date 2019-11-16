@@ -1,41 +1,53 @@
-import Vue from "vue";
-import Router from "vue-router";
-import Dashboard from "./views/Dashboard.vue";
-import UserProfile from "./views/UserProfile.vue";
-import Projects from "./views/Projects.vue";
-import TableList from "./views/TableList.vue";
+import Vue from 'vue';
+import Router from 'vue-router';
+import Dashboard from './views/Dashboard.vue';
+import UserProfile from './views/UserProfile.vue';
+import Products from './views/Products.vue';
+import TableList from './views/TableList.vue';
+import Location from './views/Location.vue';
+import Customers from './views/Customers.vue';
+import Partners from './views/Partners.vue';
 
 Vue.use(Router);
 
 export default new Router({
-  mode: "history",
+  mode: 'history',
   base: process.env.BASE_URL,
   routes: [
     {
-      path: "/",
-      name: "dashboard",
+      path: '/',
+      name: 'dashboard',
       component: Dashboard
     },
     {
-      path: "/userprofile",
-      name: "userprofile",
+      path: '/userprofile',
+      name: 'userprofile',
       component: UserProfile
-
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      // component: () =>
-      //   import(/* webpackChunkName: "about" */ './views/About.vue')
     },
     {
-      path: "/projects",
-      name: "projects",
-      component: Projects
+      path: '/products',
+      name: 'products',
+      component: Products
     },
     {
-      path: "/tablelist",
-      name: "tablelist",
+      path: '/tablelist',
+      name: 'tablelist',
       component: TableList
+    },
+    {
+      path: '/location',
+      name: 'location',
+      component: Location
+    },
+    {
+      path: '/customers',
+      name: 'customers',
+      component: Customers
+    },
+    {
+      path: '/partners',
+      name: 'partners',
+      component: Partners
     }
   ]
 });

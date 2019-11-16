@@ -22,10 +22,17 @@
 $bg-light: #f4f3ef;
 $dark-font-color: #252422;
 $grey-font-color: #9a9a9a;
-$dark-grey-color: #66615b;
+$darkgrey-font-color: #66615b;
 $lightgrey-font-color: #a9a9a9;
 
 $text-success: #44b883;
 $text-info: #68b3c8;
 $text-warning: #f3bb45;
 $text-danger: #eb5e28;
+$text-secondary: #6c757d;
+
+// Utilities
+@import 'utilities';
+
+// MEDIA QUERIES
+@import 'mobile';

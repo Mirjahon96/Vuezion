@@ -1,43 +1,23 @@
 <template>
   <div class="sidebar">
     <nav class="main-menu">
-      <div class="divider">
+      <div class="divider" :class="{'grey-border' : !darkMode, 'white-border' : darkMode}">
         <a href="#" class="logo">
           <img src="@/assets/logo.png" alt />
-          <span>Epicweb Dashboard</span>
+          <span
+            class="title"
+            :class="{ 'light-text': darkMode, 'grey-text': !darkMode }"
+          >Epicweb Dashboard</span>
         </a>
       </div>
       <ul>
-        <!-- <li v-for="(link, index) in links" :key="index" router :to="link.route">
-          {{ link.text }}
-          <i>{{ link.icon }}</i>
-          <span class="nav-text">{{ link.text }}</span>
-        </li>-->
-        <router-link to="/">
-          <li>
-            <i class="fa fa-sliders-h"></i>
-            <span class="nav-text">Dashboard</span>
-          </li>
-        </router-link>
-
-        <router-link to="/userprofile">
-          <li>
-            <i class="fa fa-user"></i>
-            <span class="nav-text">User Profile</span>
-          </li>
-        </router-link>
-
-        <router-link to="/tablelist">
-          <li>
-            <i class="fa fa-list-alt"></i>
-            <span class="nav-text">Table Lists</span>
-          </li>
-        </router-link>
-
-        <router-link to="/projects">
-          <li>
-            <i class="fa fa-folder"></i>
-            <span class="nav-text">Projects</span>
+        <router-link v-for="link in links" :key="link.id" :to="link.route">
+          <li class="list">
+            <i :class="[link.icon, { 'light-text': darkMode, 'dark-text': !darkMode }]"></i>
+            <span
+              class="nav-text"
+              :class="{ 'light-text': darkMode, 'dark-text': !darkMode }"
+            >{{ link.text }}</span>
           </li>
         </router-link>
       </ul>
@@ -50,13 +30,21 @@ export default {
   name: "Sidebar",
   data() {
     return {
-      // links: [
-      //   { icon: "dashboard", text: "Dashboard", route: "/" },
-      //   { icon: "user", text: "User Profile", route: "/userprofile" },
-      //   { icon: "table", text: "Table List", route: "/tablelist" },
-      //   { icon: "folder", text: "Projects", route: "/projects" }
-      // ]
+      links: [
+        { icon: "fa fa-sliders-h", text: "Dashboard", route: "/" },
+        { icon: "fa fa-user", text: "User Profile", route: "/userprofile" },
+        { icon: "fa fa-list-alt", text: "Table List", route: "/tablelist" },
+        { icon: "fa fa-folder", text: "Products", route: "/products" },
+        { icon: "fa fa-users", text: "Customers", route: "/customers" },
+        { icon: "fa fa-handshake", text: "Partners", route: "/partners" },
+        { icon: "fa fa-map-marker", text: "Location", route: "/location" }
+      ]
     };
+  },
+  computed: {
+    darkMode() {
+      return this.$store.getters.darkMode;
+    }
   }
 };
 </script>
@@ -67,7 +55,7 @@ export default {
   top: 0;
   bottom: 0;
   left: 0;
-  z-index: 1;
+  z-index: 1000;
   background: #fff;
   background-size: cover;
   background-position: center center;
@@ -77,53 +65,58 @@ export default {
     height: 100%;
     overflow-y: auto;
     overflow-x: hidden;
-    width: 260px;
+    width: 250px;
     z-index: 4;
     display: block;
+
+    .divider {
+      width: 90%;
+      margin: 0.399rem auto;
+    }
 
     img {
       width: 70px;
     }
 
     .logo {
-      color: $dark-grey-color;
+      color: $darkgrey-font-color;
       font-size: 14px;
       display: flex;
       align-items: center;
       font-weight: 600;
-      margin-bottom: 1.2rem;
+      margin-bottom: 1.1rem;
       padding: 5px;
     }
 
     ul {
       list-style: none;
       padding-left: 0;
-    }
 
-    li {
-      margin-bottom: 1rem;
-      padding: 10px 2rem;
-      opacity: 0.7;
-      cursor: pointer;
+      .list {
+        margin-bottom: 1rem;
+        padding: 10px 2rem;
+        cursor: pointer;
+        opacity: 0.8;
 
-      &:hover {
-        opacity: 1;
+        &:hover {
+          opacity: 1;
+        }
+
+        i.fa {
+          margin-right: 15px;
+          color: $dark-font-color;
+          font-size: 24px;
+          line-height: 30px;
+          font-weight: 600;
+          float: left;
+        }
       }
 
       .nav-text {
-        color: $dark-font-color;
+        // color: $dark-font-color;
         font-size: 12px;
         font-weight: 600;
         text-transform: uppercase;
-      }
-
-      .fa {
-        margin-right: 15px;
-        color: $dark-grey-color;
-        font-size: 24px;
-        line-height: 30px;
-        font-weight: 600;
-        float: left;
       }
     }
   }

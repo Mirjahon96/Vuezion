@@ -3,10 +3,18 @@ import App from './App.vue';
 import router from './router';
 import store from './store';
 import VueApexCharts from 'vue-apexcharts';
+import * as VueGoogleMaps from 'vue2-google-maps';
 
 Vue.config.productionTip = false;
 
 Vue.use(VueApexCharts);
+
+Vue.use(VueGoogleMaps, {
+  load: {
+    key: 'AIzaSyCqWovXX0jtlG53Rgjtif0kyHMghq7r83Y',
+    libraries: 'places' // This is required if you use the Autocomplete plugin
+  }
+});
 
 new Vue({
   router,

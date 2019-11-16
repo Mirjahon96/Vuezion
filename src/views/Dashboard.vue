@@ -1,11 +1,9 @@
 <template>
-  <div class="main-wrapper">
-    <div class="dashboard">
-      <Card></Card>
-      <AreaChart></AreaChart>
-      <PieChart></PieChart>
-      <div class="clear"></div>
-    </div>
+  <div id="dashboard">
+    <Card />
+    <AreaChart />
+    <PieChart />
+    <div class="clear"></div>
   </div>
 </template>
 
@@ -16,11 +14,21 @@ import AreaChart from "@/components/Charts/AreaChart.vue";
 import PieChart from "@/components/Charts/PieChart.vue";
 
 export default {
-  name: "dashboard",
+  name: "Dashboard",
   components: {
     Card,
     AreaChart,
     PieChart
+  },
+  computed: {
+    darkMode() {
+      return this.$store.getters.darkMode;
+    }
+  },
+  methods: {
+    toggleDarkMode() {
+      this.$store.commit("toggleDarkMode");
+    }
   }
 };
 </script>

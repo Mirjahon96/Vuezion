@@ -1,11 +1,23 @@
 <template>
   <div class="navbar">
-    <router-link to="/dashboard" class="router-link">Dashboard</router-link>
+    <router-link
+      :to="this.$route.path"
+      class="router-link"
+      :class="{ 'light-text': darkMode, 'grey-text': !darkMode }"
+    >{{ this.$route.name }}</router-link>
     <ul>
-      <li><i class="fa fa-sliders-h fa-2x"></i> Stats</li>
-      <li v-on:click="dropdownToggle()">
-        <i class="fa fa-bell"></i> 5 Notifications
-        <i class="fa fa-sort-down"></i>
+      <li :class="{ 'light-text': darkMode, 'grey-text': !darkMode }">
+        <i
+          class="fa fa-sliders-h fa-2x"
+          :class="{ 'light-text': darkMode, 'grey-text': !darkMode }"
+        ></i> Stats
+      </li>
+      <li v-on:click="dropdownToggle()" :class="{ 'light-text': darkMode, 'dark-text': !darkMode }">
+        <i class="fa fa-bell" :class="{ 'light-text': darkMode, 'grey-text': !darkMode }"></i> 5 Notifications
+        <i
+          class="fa fa-sort-down"
+          :class="{ 'light-text': darkMode, 'grey-text': !darkMode }"
+        ></i>
         <ul v-show="dropdown">
           <li>Notification 1</li>
           <li>Notification 2</li>
@@ -14,19 +26,34 @@
           <li>Notification 5</li>
         </ul>
       </li>
-      <li><i class="fa fa-cog"></i> Settings</li>
+      <li :class="{ 'light-text': darkMode, 'grey-text': !darkMode }">
+        <i class="fa fa-cog" :class="{ 'light-text': darkMode, 'grey-text': !darkMode }"></i> Settings
+      </li>
+      <!-- ThemeSwitch component -->
+      <ThemeSwitch />
     </ul>
   </div>
 </template>
 
 <script>
+import ThemeSwitch from "@/components/ThemeSwitch.vue";
+
 export default {
   name: "Navbar",
+  components: {
+    ThemeSwitch
+  },
   data() {
     return {
       dropdown: false
     };
   },
+  computed: {
+    darkMode() {
+      return this.$store.getters.darkMode;
+    }
+  },
+
   methods: {
     dropdownToggle: function() {
       this.dropdown = !this.dropdown;
@@ -47,7 +74,7 @@ export default {
   position: relative;
 
   margin: 0 0 0 auto;
-  width: calc(100% - 260px);
+  width: calc(100% - 255px);
 
   ul {
     display: flex;
@@ -64,11 +91,11 @@ export default {
       color: $grey-font-color;
 
       &:nth-child(2) {
-        color: $dark-grey-color;
+        color: $darkgrey-font-color;
       }
 
-      &:hover {
-        color: grey;
+      a {
+        color: #fff;
       }
 
       .fa.fa-sort-down {
@@ -97,7 +124,7 @@ export default {
 
         li {
           padding: 10px 45px 10px 15px;
-          color: $dark-grey-color;
+          color: $darkgrey-font-color;
           font-size: 14px;
           text-transform: none;
           font-weight: 400;
@@ -105,7 +132,7 @@ export default {
 
         li:hover {
           color: #fff;
-          background: $dark-grey-color;
+          background: $darkgrey-font-color;
         }
       }
     }

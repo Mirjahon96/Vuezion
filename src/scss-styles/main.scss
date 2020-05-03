@@ -1,0 +1,59 @@
+$grey-font-color: #c5aaaa;
+$lightgrey-font-color: #a9a9a9;
+$darkgrey-font-color: #66615b;
+$dark-font-color: #222222;
+
+$has-text-primary: #00d1b2;
+$has-text-success: #23d160;
+$has-text-info: #209cee;
+$has-text-warning: #ffdd57;
+$has-text-danger: #ff3860;
+$has-text-secondary: #7a7a7a;
+
+$primary-color: #46c894;
+
+$bg-light: #f4f3ef;
+$linear-bg: linear-gradient(
+  to right,
+  rgba(117, 205, 111, 1) 0%,
+  rgba(70, 200, 148, 1) 100%
+);
+
+// Utilities
+@import "./navbars";
+
+// MEDIA QUERIES
+@import "utilities";
+@import "mobile";
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #333;
+}
+
+a {
+  text-decoration: none;
+}
+
+p {
+  color: #666666;
+  line-height: 32px;
+}
+
+.router-link {
+  text-decoration: none;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: $darkgrey-font-color;
+}

@@ -27,13 +27,13 @@ export default {
     return {
       sidenav: false,
       links: [
-        { icon: "fa fa-sliders-h", text: "Dashboard", route: "/" },
-        { icon: "fa fa-user", text: "User Profile", route: "/userprofile" },
-        { icon: "fa fa-list-alt", text: "Table List", route: "/tablelist" },
-        { icon: "fa fa-folder", text: "Products", route: "/products" },
-        { icon: "fa fa-users", text: "Customers", route: "/customers" },
-        { icon: "fa fa-handshake", text: "Partners", route: "/partners" },
-        { icon: "fa fa-map-marker", text: "Location", route: "/location" }
+        // { icon: "fa fa-sliders-h", text: "Dashboard", route: "/" },
+        // { icon: "fa fa-user", text: "User Profile", route: "/userprofile" },
+        // { icon: "fa fa-list-alt", text: "Table List", route: "/tablelist" },
+        // { icon: "fa fa-folder", text: "Products", route: "/products" },
+        // { icon: "fa fa-users", text: "Customers", route: "/customers" },
+        // { icon: "fa fa-handshake", text: "Partners", route: "/partners" },
+        // { icon: "fa fa-map-marker", text: "Location", route: "/location" }
       ]
     };
   },

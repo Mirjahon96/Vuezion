@@ -1,5 +1,5 @@
 {
-  "name": "dashboard",
+  "name": "vizion",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -8,11 +8,16 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "apexcharts": "^3.8.0",
     "core-js": "^2.6.5",
+    "swiper": "^5.3.7",
     "vue": "^2.6.10",
-    "vue-apexcharts": "^1.4.0",
+    "vue-agile": "^1.1.0",
+    "vue-awesome-swiper": "^4.1.1",
+    "vue-carousel": "^0.18.0",
+    "vue-owl-carousel": "^2.0.3",
     "vue-router": "^3.0.3",
+    "vue-simple-carousel": "^0.4.3",
+    "vue-simple-slider": "^1.0.2",
     "vue2-google-maps": "^0.10.7",
     "vuex": "^3.0.1"
   },

@@ -1,0 +1,80 @@
+// Media queries
+
+// DESKTOP
+@media (max-width: 990px) {
+  .container {
+    padding-left: 5%;
+    padding-right: 5%;
+  }
+
+  // Showcase
+  .responsive-showcase {
+    display: block !important;
+    text-align: center;
+  }
+
+  .display {
+    &-1 {
+      font-size: 48px;
+    }
+    &-2 {
+      font-size: 26px;
+    }
+    &-3 {
+      font-size: 24px;
+    }
+    &-4 {
+      font-size: 20px;
+    }
+  }
+}
+
+// TABLET
+@media (max-width: 760px) {
+  #home {
+    // Showcase
+    .home-showcase::before {
+      content: none !important;
+    }
+
+    // Features
+    .features {
+      &-1 {
+        &::before {
+          content: none !important;
+        }
+      }
+    }
+
+    // Services
+    .services::before {
+      width: 100%;
+      left: -250px;
+    }
+  }
+
+  .hero {
+    &-body {
+      padding: 0px;
+    }
+  }
+
+  // Footer
+  .footer {
+    .content-box {
+      display: block !important;
+
+      .logo-img {
+        margin-bottom: 1rem;
+      }
+    }
+
+    .links {
+      a {
+        font-size: 14px;
+        padding-left: 10px;
+        padding-right: 10px;
+      }
+    }
+  }
+}

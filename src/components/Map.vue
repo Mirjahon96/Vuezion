@@ -10,12 +10,16 @@
               <button class="btn btn-blue" @click="addMarker">Add</button>
             </label>
 
-            <gmap-map :center="center" :zoom="12" style="width:100%;  height: 400px;">
+            <gmap-map
+              :center="center"
+              :zoom="12"
+              style="width:100%;  height: 400px;"
+            >
               <gmap-marker
                 :key="index"
                 v-for="(m, index) in markers"
                 :position="m.position"
-                @click="center=m.position"
+                @click="center = m.position"
               ></gmap-marker>
             </gmap-map>
           </div>

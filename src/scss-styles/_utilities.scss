@@ -1,0 +1,249 @@
+// Typography
+.display {
+  &-1 {
+    font-size: 70px;
+    line-height: 80px;
+  }
+  &-2 {
+    font-size: 50px;
+  }
+  &-3 {
+    font-size: 30px;
+  }
+  &-4 {
+    font-size: 24px;
+  }
+  &-5 {
+    font-size: 20px;
+  }
+}
+
+.is-subtitle {
+  &-1 {
+    font-size: 14px;
+    line-height: 24px;
+  }
+}
+
+// UI Utilities & Customizations
+.fullheight {
+  height: 100%;
+}
+
+.has-background {
+  &-lightblue {
+    background: #e8f8f2;
+  }
+
+  &-green {
+    background: $linear-bg;
+  }
+}
+
+.has-text {
+  &-darkgrey {
+    color: $dark-font-color;
+    &:hover {
+      color: #fff;
+    }
+  }
+}
+
+.is {
+  // Flex
+  &-row-reverse {
+    flex-direction: row-reverse;
+  }
+
+  &-align-centered {
+    align-items: center;
+  }
+
+  &-align-self-centered {
+    align-self: center;
+  }
+
+  &-justified-between {
+    justify-content: space-between;
+  }
+
+  // Other
+  &-borderless {
+    border: none;
+  }
+
+  &-responsive-img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  &-hoverable:hover {
+    position: relative;
+    top: -8px;
+    box-shadow: 0px 1px 30px 0px rgba(70, 200, 148, 0.25) !important;
+    z-index: 5;
+    transition: none !important;
+  }
+
+  &-transparent {
+    background: transparent;
+  }
+
+  &-transitionless {
+    transition: none !important;
+    &:hover {
+      transition: none !important;
+    }
+  }
+
+  &-video {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: $primary-color;
+    border: 1px solid $primary-color;
+    border-radius: 100%;
+    width: 50px;
+    height: 50px;
+
+    &:hover {
+      color: $primary-color;
+    }
+  }
+  &-hoverless:hover {
+    color: unset;
+    background: none !important;
+  }
+
+  &-green {
+    background: #6ecc74;
+    color: #fff;
+    &:hover {
+      background: $primary-color;
+      color: #fff;
+    }
+  }
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 20px;
+  font-size: 16px;
+  vertical-align: middle;
+  font-weight: 600;
+  outline: none;
+  cursor: pointer;
+  box-shadow: 6px 4px 20px 1px rgba(70, 200, 148, 0.25);
+
+  &-green {
+    color: #fff;
+    background-image: $linear-bg;
+    border: 2px solid $primary-color;
+
+    // &-inverse:focus {
+    //   border: none;
+    //   outline: none;
+    //   box-shadow: none !important;
+    //   &:hover {
+    //     color: #46c894;
+    //   }
+    // }
+
+    &:hover {
+      background: $primary-color;
+    }
+  }
+
+  &-rounded {
+    border-radius: 40px;
+  }
+
+  &-large {
+    padding: 16px 40px;
+  }
+}
+
+// Margin & Padding
+$spaceamounts: (0, 1, 2, 4, 8, 12, 16, 20, 24, 28, 30, 32, 40, 50);
+
+@each $space in $spaceamounts {
+  // All around margin
+  .m-#{$space} {
+    margin: #{$space}px !important;
+  }
+
+  // Bottom margin
+  .mb-#{$space} {
+    margin-bottom: #{$space}px !important;
+  }
+
+  // Top margin
+  .mt-#{$space} {
+    margin-top: #{$space}px !important;
+  }
+
+  // Right margin
+  .mr-#{$space} {
+    margin-right: #{$space}px !important;
+  }
+
+  // Left margin
+  .ml-#{$space} {
+    margin-left: #{$space}px;
+  }
+
+  // Vertical margin
+  .my-#{$space} {
+    margin-top: #{$space}px;
+    margin-bottom: #{$space}px;
+  }
+
+  // All around padding
+  .p-#{$space} {
+    padding: #{$space}px;
+  }
+  // Top padding
+  .pt-#{$space} {
+    padding-top: #{$space}px;
+  }
+  // Bottom padding
+  .pb-#{$space} {
+    padding-bottom: #{$space}px;
+  }
+  // Padding left
+  .pl-#{$space} {
+    padding-left: #{$space}px;
+  }
+  // Padding right
+  .pr-#{$space} {
+    padding-right: #{$space}px !important;
+  }
+  // Y padding
+  .py-#{$space} {
+    padding-top: #{$space}px;
+    padding-bottom: #{$space}px;
+  }
+  // X padding
+  .px-#{$space} {
+    padding-left: #{$space}px;
+    padding-right: #{$space}px;
+  }
+}
+
+// Animations
+@keyframes bounce {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-25px);
+  }
+}
+@-webkit-keyframes bounce {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-25px);
+  }
+}

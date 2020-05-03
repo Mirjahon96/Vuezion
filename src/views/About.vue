@@ -15,8 +15,8 @@
         >
           <router-link to="/" class="has-text-darkgrey is-transitionless pr-4">
             <i class="fa fa-home"></i>
-            Home
-          </router-link>/
+            Home </router-link
+          >/
           <span class="has-text-white">About Us</span>
         </button>
       </AppHero>
@@ -61,16 +61,16 @@
 
     <!-- Team -->
     <section class="about-team">
-      <div class="container">
+      <div class="container px-50">
         <div class="columns">
           <div class="column is-3" v-for="(team, i) of teamCards" :key="i">
             <AppImageCard
-              styles="p-20"
+              styles="is-shadowless"
               :img="team.img"
               :title="team.title"
               :subtitle="team.subtitle"
             >
-              <div slot="icon-content">
+              <template slot="icon-content">
                 <!-- AppIcon -->
                 <AppIcon :icons="socialIcons">
                   <template v-slot:icon="{ icon }">
@@ -79,7 +79,7 @@
                     </a>
                   </template>
                 </AppIcon>
-              </div>
+              </template>
             </AppImageCard>
           </div>
         </div>
@@ -198,7 +198,7 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 #about-page {
   position: relative;
 

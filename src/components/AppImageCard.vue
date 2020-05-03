@@ -1,5 +1,5 @@
 <template functional>
-  <div class="card" :class="styles">
+  <div class="card" :class="props.styles">
     <div class="card-content p-0">
       <div class="card-image">
         <img :src="props.img" :alt="alt" class="responsive-img" />

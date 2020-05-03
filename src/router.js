@@ -25,6 +25,5 @@ export default new Router({
       name: "Services",
       component: Services
     }
-
   ]
 });

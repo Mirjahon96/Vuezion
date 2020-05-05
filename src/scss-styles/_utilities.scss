@@ -128,6 +128,18 @@
   }
 }
 
+.custom-input,
+.custom-textarea {
+  border: solid 2px #ced4da;
+  // font-size: 16px;
+  &:hover {
+    border-color: $primary-color;
+  }
+  &:focus {
+    border-color: $primary-color;
+  }
+}
+
 .btn {
   display: inline-block;
   padding: 12px 20px;
@@ -142,15 +154,6 @@
     color: #fff;
     background-image: $linear-bg;
     border: 2px solid $primary-color;
-
-    // &-inverse:focus {
-    //   border: none;
-    //   outline: none;
-    //   box-shadow: none !important;
-    //   &:hover {
-    //     color: #46c894;
-    //   }
-    // }
 
     &:hover {
       background: $primary-color;

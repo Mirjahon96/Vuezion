@@ -60,30 +60,6 @@ export default {
       top: 16px;
       left: -45px;
       width: 40px;
-      ul {
-        li {
-          margin: 5px 0;
-          border-radius: 50%;
-          background: #fff;
-          height: 40px;
-          width: 40px;
-          text-align: center;
-          line-height: 42px;
-
-          a {
-            font-size: 16px;
-            color: $primary-color;
-            transition: none !important;
-          }
-          &:hover {
-            transition: none !important;
-            background: $linear-bg;
-            a {
-              color: #fff;
-            }
-          }
-        }
-      }
     }
 
     .text-content {

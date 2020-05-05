@@ -1,5 +1,5 @@
 <template>
-  <div class="app-tabs">
+  <div id="app-tabs">
     <ul class="tab-content" :class="tabStyle">
       <li v-for="(tab, index) in tabs" :key="index">
         <button
@@ -66,7 +66,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.app-tabs {
+#app-tabs {
   .tab-content {
     padding: 8px;
     background: #d8f3e8;

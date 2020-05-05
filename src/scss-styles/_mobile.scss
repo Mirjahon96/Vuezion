@@ -27,6 +27,17 @@
       font-size: 20px;
     }
   }
+
+  // AppIcon component
+  ul#app-icon {
+    .fab {
+      width: 30px;
+      height: 30px;
+      line-height: 34px;
+      font-size: 14px;
+      margin-bottom: 0px;
+    }
+  }
 }
 
 // TABLET
@@ -56,6 +67,24 @@
   .hero {
     &-body {
       padding: 0px;
+    }
+  }
+
+  // AppTabs component
+  #app-tabs {
+    .tab-content {
+      background: none !important;
+      border: none !important;
+    }
+  }
+
+  // AppIcon component
+  ul#app-icon {
+    .fab {
+      width: 40px;
+      height: 40px;
+      font-size: 16px;
+      line-height: 42px;
     }
   }
 

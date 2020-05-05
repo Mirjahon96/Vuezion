@@ -15,8 +15,8 @@
         >
           <router-link to="/" class="has-text-darkgrey is-transitionless pr-4">
             <i class="fa fa-home"></i>
-            Home </router-link
-          >/
+            Home
+          </router-link>/
           <span class="has-text-white">About Us</span>
         </button>
       </AppHero>
@@ -60,8 +60,9 @@
     </section>
 
     <!-- Team -->
-    <section class="about-team">
+    <section class="about-team pt-30 pb-50">
       <div class="container px-50">
+        <AppHeadingTitle title="Our Team" />
         <div class="columns">
           <div class="column is-3" v-for="(team, i) of teamCards" :key="i">
             <AppImageCard
@@ -72,9 +73,9 @@
             >
               <template slot="icon-content">
                 <!-- AppIcon -->
-                <AppIcon :icons="socialIcons">
+                <AppIcon :icons="socialIcons" fab>
                   <template v-slot:icon="{ icon }">
-                    <a :href="icon.href">
+                    <a :href="icon.href" class="has-text-green">
                       <i :class="icon.name"></i>
                     </a>
                   </template>
@@ -83,6 +84,18 @@
             </AppImageCard>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- Our Clients -->
+    <section class="about-clients pt-30">
+      <div class="container">
+        <AppHeadingTitle title="They Trust Me" />
+        <AppSlider :img="clients">
+          <template v-slot:item="item">
+            <img :src="item.item" />
+          </template>
+        </AppSlider>
       </div>
     </section>
   </div>
@@ -94,6 +107,8 @@ import AppTabs from "../components/AppTabs";
 import AppTab from "../components/AppTab";
 import AppImageCard from "../components/AppImageCard";
 import AppIcon from "@/components/AppIcon";
+import AppHeadingTitle from "@/components/AppHeadingTitle";
+import AppSlider from "@/components/AppSlider";
 
 export default {
   name: "About",
@@ -102,7 +117,9 @@ export default {
     AppTabs,
     AppTab,
     AppImageCard,
-    AppIcon
+    AppIcon,
+    AppHeadingTitle,
+    AppSlider
   },
   data() {
     return {
@@ -177,8 +194,8 @@ export default {
         },
         {
           img: require("@/assets/team-3.jpg"),
-          title: "Sarah Anderson",
-          subtitle: "Marketing Expert"
+          title: "Sarah Clear",
+          subtitle: "Market Expert"
         },
         {
           img: require("@/assets/team-4.jpg"),
@@ -192,6 +209,16 @@ export default {
         { name: "fab fa-twitter", href: "#!" },
         { name: "fab fa-google", href: "#!" },
         { name: "fab fa-github", href: "#!" }
+      ],
+
+      // Clients
+      clients: [
+        require("@/assets/clients-img1.png"),
+        require("@/assets/clients-img5.png"),
+        require("@/assets/clients-img6.png"),
+        require("@/assets/clients-img4.png"),
+        require("@/assets/clients-img2.png"),
+        require("@/assets/clients-img3.png")
       ]
     };
   }
@@ -208,6 +235,14 @@ export default {
         color: #fff;
         background-image: $linear-bg;
       }
+    }
+  }
+
+  .about-clients {
+    padding-bottom: 100px;
+    img {
+      width: auto;
+      margin: 0 auto;
     }
   }
 }

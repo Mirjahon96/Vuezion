@@ -4,6 +4,7 @@ import Home from "./views/Home.vue";
 import About from "./views/About.vue";
 import Services from "./views/Services.vue";
 import ContactUs from "./views/ContactUs.vue";
+import Blog from "./views/Blog.vue";
 
 Vue.use(Router);
 
@@ -31,5 +32,10 @@ export default new Router({
       name: "ContactUs",
       component: ContactUs
     },
+    {
+      path: "/blog",
+      name: "Blog",
+      component: Blog
+    }
   ]
 });

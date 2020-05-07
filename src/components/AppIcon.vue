@@ -20,11 +20,6 @@ export default {
       required: false,
       default: false
     },
-    hrefStyle: {
-      type: Boolean,
-      required: false,
-      default: false
-    },
     size: {
       type: Number,
       required: false,
@@ -45,6 +40,10 @@ ul {
     width: 40px;
     text-align: center;
     line-height: 42px;
+
+    a {
+      transition: none !important;
+    }
   }
   li.fab:hover {
     background: $linear-bg;

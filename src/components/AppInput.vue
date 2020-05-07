@@ -9,6 +9,7 @@
           class="input custom-input"
           :type="props.type"
           :placeholder="props.placeholder"
+          required
         />
 
         <textarea

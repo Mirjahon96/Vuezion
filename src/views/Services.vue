@@ -14,8 +14,7 @@
           class="btn navbar-item btn-rounded has-background-green is-borderless py-16 px-30"
         >
           <router-link to="/" class="has-text-darkgrey is-transitionless pr-4">
-            <i class="fa fa-home"></i>
-            Home
+            <i class="fa fa-home"></i>Home
           </router-link>/
           <span class="has-text-white">Services</span>
         </button>

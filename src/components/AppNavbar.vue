@@ -37,7 +37,7 @@
                 <a class="navbar-link py-0 pl-0">Pages</a>
               </li>
               <div v-show="dropdown" class="navbar-dropdown">
-                <a class="navbar-item">Blog Details</a>
+                <router-link to="/blog" class="navbar-item">Blog Details</router-link>
                 <a class="navbar-item">Coming Soon</a>
               </div>
             </div>

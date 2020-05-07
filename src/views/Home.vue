@@ -85,8 +85,8 @@
       <div class="container">
         <AppHeadingTitle title="They Trust Me" />
         <AppSlider :img="clients">
-          <template v-slot:item="item">
-            <img :src="item.item" />
+          <template v-slot:item="{ item }">
+            <img :src="item.img" :title="item.name" />
           </template>
         </AppSlider>
       </div>
@@ -198,12 +198,12 @@ export default {
 
       // Our clients
       clients: [
-        require("@/assets/clients-img1.png"),
-        require("@/assets/clients-img5.png"),
-        require("@/assets/clients-img6.png"),
-        require("@/assets/clients-img4.png"),
-        require("@/assets/clients-img2.png"),
-        require("@/assets/clients-img3.png")
+        { img: require("@/assets/clients-img1.png"), name: "HTML5" },
+        { img: require("@/assets/clients-img5.png"), name: "Adobe Xd" },
+        { img: require("@/assets/clients-img6.png"), name: "Bulma" },
+        { img: require("@/assets/clients-img4.png"), name: "Vue" },
+        { img: require("@/assets/clients-img2.png"), name: "CSS3" },
+        { img: require("@/assets/clients-img3.png"), name: "Vuetify" }
       ]
     };
   }

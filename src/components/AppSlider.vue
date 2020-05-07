@@ -8,9 +8,7 @@
     :responsive="responsive"
   >
     <div class="item" v-for="item in img" :key="item.id">
-      <slot name="item" :item="item">
-        <img :src="item" alt />
-      </slot>
+      <slot name="item" :item="item"></slot>
     </div>
   </carousel>
 </template>
@@ -46,6 +44,10 @@ export default {
     img: {
       type: [Array, Object],
       required: true
+    },
+    tooltip: {
+      type: String,
+      required: false
     }
   },
   data() {

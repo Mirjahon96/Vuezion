@@ -10,17 +10,20 @@
           />
         </p>
       </figure>
-      <div class="media-content">
-        <div>
-          <h5 class="display-5 has-text-weight-medium mb-8">{{ props.title }}</h5>
-          <a href="#!" class="is-subtitle-1" :class="{ 'is-hoverless': props.hoverlessLink}">
-            <i class="fas fa-calendar has-text-primary"></i>
-            {{ props.subtitle }}
-          </a>
-          <p class="is-subtitle-1 mt-20">{{ props.text }}</p>
+      <slot name="media-content">
+        <div class="media-content">
+          <div>
+            <h5 class="display-5 has-text-weight-medium mb-8">{{ props.title }}</h5>
+            <a href="#!" class="is-subtitle-1" :class="{ 'is-hoverless': props.hoverlessLink}">
+              <i class="fas fa-calendar has-text-primary"></i>
+              {{ props.subtitle }}
+            </a>
+            <p class="is-subtitle-1 mt-20">{{ props.text }}</p>
+          </div>
         </div>
-      </div>
-      <div class="media-right" v-if="reply">
+      </slot>
+
+      <div class="media-right" v-if="props.reply">
         <a href="#!">Reply</a>
       </div>
     </div>
@@ -53,24 +56,21 @@ export default {
     },
     subtitle: {
       type: String,
-      required: false,
-      default: "May 10, 2020 at 12:00 pm"
+      required: false
     },
     text: {
       type: String,
-      required: false,
-      default:
-        "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam."
+      required: false
     },
     hoverlessLink: {
       type: Boolean,
       required: false,
-      default: true
+      default: false
     },
     reply: {
       type: Boolean,
       require: false,
-      default: true
+      default: false
     }
   }
 };

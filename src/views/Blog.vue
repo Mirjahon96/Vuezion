@@ -26,7 +26,7 @@
     <section class="blog-content">
       <div class="container">
         <div class="columns">
-          <!-- 1 -->
+          <!-- 1 column -->
           <div class="column is-2 has-text-centered">
             <button class="has-background-green has-text-white badge title is-3">
               12
@@ -40,7 +40,7 @@
               </template>
             </AppIcon>
           </div>
-          <!-- 2 -->
+          <!-- 2 column -->
           <div class="column is-7">
             <div class="image mb-50">
               <img src="@/assets/blog-page-img.jpg" alt="blog img" class="responsive-img" />
@@ -70,7 +70,7 @@
             </div>
 
             <!-- 2.1 -->
-            <div class="columns my-30">
+            <div class="columns my-30 has-text-centered">
               <div class="column">
                 <img src="@/assets/blog-img1.jpg" alt="blog img" />
               </div>
@@ -86,12 +86,12 @@
               <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.</p>
             </div>
             <!-- comment box -->
-            <article class="comment-box">
+            <article class="comment-box pt-30 px-20 pb-10">
               <AppCommentBox
                 avatarSize="150px"
                 title="Rinks Kevin"
+                subtitle="May 10, 2020 at 00:32 pm"
                 text="CEO & It was popularised in the 1960s with the and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
-                reply
               ></AppCommentBox>
               <div class="mt-40">
                 <h5 class="display-5 has-text-weight-bold">
@@ -99,20 +99,19 @@
                   <span class="subtitle is-6 has-text-weight-medium">/ 21</span>
                 </h5>
 
-                <hr class="my-4" />
                 <div class="comment-item" v-for="(comment, index) in comments" :key="index">
                   <AppCommentBox
                     :avatar="comment.img"
                     :title="comment.title"
                     :subtitle="comment.subtitle"
                     text="Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam."
-                    hoverlessLink
+                    :reply="true"
                   ></AppCommentBox>
                 </div>
               </div>
 
               <!-- Post Comment -->
-              <form class="post-comment">
+              <form class="post-comment pt-30">
                 <h5 class="display-5 has-text-weight-bold">Post A Comment</h5>
                 <div class="columns">
                   <div class="column" v-for="(post, index) in postComments" :key="index">
@@ -141,6 +140,40 @@
               </form>
               <!-- end post comment -->
             </article>
+          </div>
+          <!-- 3 column -->
+          <div class="column is-3">
+            <!-- Search Input -->
+            <div class="comment-box py-30 px-24 mb-50">
+              <AppInput styles="is-rounded is-medium" placeholder="Search.." />
+            </div>
+            <!-- Recent Articles -->
+            <div class="comment-box pt-30 px-24 mb-50">
+              <h5 class="display-4 has-text-weight-bold mb-40">Recent Articles</h5>
+              <div class="mb-30" v-for="(article, index) in recentArticles" :key="index">
+                <AppCommentBox :avatar="article.img" avatarSize="40px" :rounded="false">
+                  <div slot="media-content">
+                    <p class="is-subtitle-1" style="line-height: 19px">
+                      By:
+                      <a href="#!" class="has-text-weight-bold">Admin</a>
+                      <br />
+                      {{ article.title }}
+                    </p>
+                    <a href="#!" class="is-subtitle-1 has-text-weight-bold">{{ article.subtitle }}</a>
+                  </div>
+                </AppCommentBox>
+              </div>
+            </div>
+            <!-- Tags -->
+            <div class="comment-box py-30 px-24">
+              <h5 class="display-4 has-text-weight-bold mb-20">Tags</h5>
+              <ul class="tag-lists">
+                <li v-for="(tag, index) in tags" :key="index">
+                  <a href="#!">{{ tag.name }}</a>
+                  ({{ tag.count }})
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
@@ -191,6 +224,44 @@ export default {
         { label: "Name", placeholder: "Your Name*" },
         { label: "Email", placeholder: "Your Email*" },
         { label: "Phone", placeholder: "Your No*" }
+      ],
+      recentArticles: [
+        {
+          img: require("@/assets/blog-articles-1.jpg"),
+          title: "May 10, 2020",
+          subtitle: "Consectetur adipiscing elit"
+        },
+        {
+          img: require("@/assets/blog-articles-2.jpg"),
+          title: "May 9, 2020",
+          subtitle: "Eiusmod tempor incididunt"
+        },
+        {
+          img: require("@/assets/blog-articles-3.jpg"),
+          title: "May 8, 2020",
+          subtitle: "Ut enim ad minim"
+        },
+        {
+          img: require("@/assets/blog-articles-4.jpg"),
+          title: "May 10, 2020",
+          subtitle: "Quis nostrud exercitation"
+        },
+        {
+          img: require("@/assets/blog-articles-5.jpg"),
+          title: "May 11, 2020",
+          subtitle: "Excepteur sint occaecat"
+        }
+      ],
+      tags: [
+        { name: "Bulma", count: "5" },
+        { name: "HTML5", count: "12" },
+        { name: "Wordpress", count: "3" },
+        { name: "CSS3", count: "9" },
+        { name: "Creative", count: "6" },
+        { name: "Multipurpose", count: "7" },
+        { name: "Adobe Xd", count: "2" },
+        { name: "Vue", count: "5" },
+        { name: "Vuetify", count: "1" }
       ]
     };
   }
@@ -216,12 +287,25 @@ export default {
     .comment-box {
       border: 1px solid #e4e4e4;
       border-radius: 8px;
-      padding: 30px 20px 10px 20px;
     }
     .comment-item {
       padding: 20px;
       border: 1px solid #e7e7e7;
       margin-bottom: 20px;
+    }
+
+    .tag-lists {
+      li {
+        font-size: 14px;
+        margin-top: 28px;
+        a {
+          font-weight: 600;
+          color: inherit;
+          &:hover {
+            color: $primary-color;
+          }
+        }
+      }
     }
   }
 }

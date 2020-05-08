@@ -35,8 +35,7 @@ export default {
     },
     label: {
       type: String,
-      required: false,
-      default: "label"
+      required: false
     },
     styles: {
       type: String,

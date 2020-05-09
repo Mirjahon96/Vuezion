@@ -1,50 +1,79 @@
 <template>
-  <div id="main-navbar">
-    <nav
-      v-on:srcoll="navbarScroll"
-      ref="navbar"
-      class="navbar"
-      role="navigation"
-      aria-label="main navigation"
-    >
-      <div class="container">
-        <div class="navbar-brand">
-          <a class="navbar-item" href="#!">
-            <img ref="logoDark" src="@/assets/logo.png" />
-            <img ref="logoLight" src="@/assets/logo-white.png" />
-          </a>
+  <div>
+    <div id="main-navbar">
+      <nav
+        v-on:srcoll="navbarScroll"
+        ref="navbar"
+        class="navbar"
+        role="navigation"
+        aria-label="main navigation"
+      >
+        <div class="container">
+          <div class="navbar-brand">
+            <a class="navbar-item" href="#!">
+              <img ref="logoDark" src="@/assets/logo.png" />
+              <img ref="logoLight" src="@/assets/logo-white.png" />
+            </a>
+            <!-- Mobile Nav -->
+            <a
+              @click="sidenav = !sidenav"
+              ref="burger"
+              role="button"
+              class="navbar-burger burger"
+              :class="{'is-active' : sidenav}"
+              aria-label="menu"
+              aria-expanded="false"
+              data-target="main-nav"
+            >
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+              <span aria-hidden="true"></span>
+            </a>
+          </div>
 
-          <a
-            role="button"
-            class="navbar-burger burger"
-            aria-label="menu"
-            aria-expanded="false"
-            data-target="main-nav"
-          >
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-          </a>
-        </div>
-
-        <div id="main-nav" class="navbar-menu pr-16">
-          <ul class="navbar-end">
-            <li v-for="link in links" :key="link.id">
-              <router-link :to="link.href" class="navbar-item custom-item">{{ link.name }}</router-link>
-            </li>
-            <div class="navbar-item has-dropdown" @click="dropdown = !dropdown">
-              <li class="custom-item mr-0 pr-12">
-                <a class="navbar-link py-0 pl-0">Pages</a>
+          <div id="main-nav" class="navbar-menu pr-16">
+            <ul class="navbar-end">
+              <li v-for="link in links" :key="link.id">
+                <router-link :to="link.href" class="navbar-item custom-item">{{ link.name }}</router-link>
               </li>
-              <div v-show="dropdown" class="navbar-dropdown">
-                <router-link to="/blog" class="navbar-item">Blog Details</router-link>
-                <a class="navbar-item">Coming Soon</a>
+              <div class="navbar-item has-dropdown" @click="dropdown = !dropdown">
+                <li class="custom-item mr-0 pr-12">
+                  <a class="navbar-link py-0 pl-0">Pages</a>
+                </li>
+                <div v-show="dropdown" class="navbar-dropdown">
+                  <router-link to="/blog" class="navbar-item">Blog Details</router-link>
+                </div>
               </div>
-            </div>
-          </ul>
+            </ul>
+          </div>
         </div>
+      </nav>
+    </div>
+
+    <!-- Mobile Nav -->
+    <aside class id="mobile-nav" v-show="sidenav">
+      <div class="container">
+        <ul class="navbar">
+          <li v-for="(li, i) in links" :key="i">
+            <router-link class="navbar-item" :to="li.href">{{ li.name }}</router-link>
+          </li>
+          <div class="has-dropdown p-0" @click="dropdown = !dropdown">
+            <li>
+              <a class="navbar-item">
+                Pages
+                <span>
+                  <i class="fas fa-chevron-down fa-xs"></i>
+                </span>
+              </a>
+            </li>
+            <div v-show="dropdown" class="navbar-dropdown p-0">
+              <hr class="m-0" />
+              <router-link to="/blog" class="navbar-item ml-12">Blog Details</router-link>
+            </div>
+          </div>
+        </ul>
       </div>
-    </nav>
+    </aside>
   </div>
 </template>
 
@@ -55,6 +84,7 @@ export default {
   data() {
     return {
       dropdown: false,
+      sidenav: false,
       links: [
         { name: "Home", href: "/" },
         { name: "About Us", href: "/about" },
@@ -71,6 +101,7 @@ export default {
         document.body.scrollTop > 60 ||
         document.documentElement.scrollTop > 60
       ) {
+        this.$refs.burger.style.color = "#fff";
         this.$refs.navbar.style.position = "fixed";
         this.$refs.navbar.style.top = "0";
         this.$refs.navbar.style.background =
@@ -85,6 +116,7 @@ export default {
           navItem[i].classList.add("light-custom-item");
         }
       } else {
+        this.$refs.burger.style.color = "initial";
         this.$refs.navbar.style.position = "relative";
         this.$refs.navbar.style.background = "#ffffff00";
         this.$refs.navbar.style.boxShadow = "none";
@@ -106,5 +138,4 @@ export default {
 };
 </script>
 
-<style lang="scss">
-</style>
+<style lang="scss"></style>

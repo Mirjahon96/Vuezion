@@ -145,7 +145,12 @@
           <div class="column is-3">
             <!-- Search Input -->
             <div class="comment-box py-30 px-24 mb-50">
-              <AppInput styles="is-rounded is-medium" placeholder="Search.." />
+              <AppInput
+                styles="is-rounded is-medium"
+                placeholder="Search.."
+                :icon="true"
+                iconName="fas fa-search"
+              />
             </div>
             <!-- Recent Articles -->
             <div class="comment-box pt-30 px-24 mb-50">

@@ -42,25 +42,16 @@
 
 // TABLET
 @media (max-width: 760px) {
-  #home {
+  #home-page {
     // Showcase
-    .home-showcase::before {
+    .home-showcase::before,
+    .home-showcase::after,
+    .features-1::before,
+    .how-it-works::before,
+    .services::before,
+    .features-2::before,
+    .our-clients::before {
       content: none !important;
-    }
-
-    // Features
-    .features {
-      &-1 {
-        &::before {
-          content: none !important;
-        }
-      }
-    }
-
-    // Services
-    .services::before {
-      width: 100%;
-      left: -250px;
     }
   }
 
@@ -80,6 +71,7 @@
 
   // AppIcon component
   ul#app-icon {
+    flex-direction: row !important;
     .fab {
       width: 40px;
       height: 40px;
@@ -105,5 +97,13 @@
         padding-right: 10px;
       }
     }
+  }
+}
+
+// Mobile
+@media (max-width: 550px) {
+  // AppCommentBox component
+  .media {
+    display: block;
   }
 }

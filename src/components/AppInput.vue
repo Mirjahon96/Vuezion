@@ -2,7 +2,7 @@
   <div id="input-field">
     <div class="field">
       <label class="label has-text-weight-medium has-text-grey">{{ props.label }}</label>
-      <div class="control">
+      <div class="control" :class="{'has-icons-right': props.icon }">
         <input
           v-if="props.textarea == false"
           :class="props.styles"
@@ -18,6 +18,10 @@
           class="textarea custom-textarea"
           :placeholder="props.placeholder"
         ></textarea>
+
+        <span class="icon is-small is-right">
+          <i :class="props.iconName"></i>
+        </span>
       </div>
     </div>
   </div>
@@ -28,6 +32,16 @@ export default {
   functional: true,
   name: "AppInput",
   props: {
+    icon: {
+      type: Boolean,
+      required: false,
+      default: false
+    },
+    iconName: {
+      type: String,
+      required: false,
+      default: ""
+    },
     textarea: {
       type: Boolean,
       required: false,

@@ -1,4 +1,4 @@
-// Topnav
+// Topnav =====================
 #top-nav {
   position: relative;
   z-index: 100;
@@ -101,5 +101,25 @@
 
   .navbar-link::after {
     border-color: initial;
+  }
+}
+
+// Mobile Nav =========================
+#mobile-nav {
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+  background: #fff;
+  margin-top: 15px;
+  padding: 10px;
+
+  .navbar-item {
+    padding: 12px;
+    font-weight: 500;
+    color: $dark-font-color;
+
+    &:hover {
+      color: $has-text-success;
+    }
   }
 }

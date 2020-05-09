@@ -2,7 +2,7 @@
   <div id="comment-box">
     <div class="media">
       <figure class="media-left">
-        <p class="image">
+        <p class="image pb-8">
           <img
             :src="props.avatar"
             :style="{ width: props.avatarSize }"

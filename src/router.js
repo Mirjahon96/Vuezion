@@ -5,6 +5,7 @@ import About from "./views/About.vue";
 import Services from "./views/Services.vue";
 import ContactUs from "./views/ContactUs.vue";
 import Blog from "./views/Blog.vue";
+import NotFound from "./views/App404.vue";
 
 Vue.use(Router);
 
@@ -36,6 +37,11 @@ export default new Router({
       path: "/blog",
       name: "Blog",
       component: Blog
+    },
+    {
+      path: "*",
+      name: "NotFound",
+      component: NotFound
     }
   ]
 });

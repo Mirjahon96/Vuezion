@@ -7,17 +7,8 @@
         </div>
         <div class="links">
           <ul class="is-flex is-align-centered">
-            <li>
-              <a href="#!" class="navbar-item">Home</a>
-            </li>
-            <li>
-              <a href="#!" class="navbar-item">About Us</a>
-            </li>
-            <li>
-              <a href="#!" class="navbar-item">Services</a>
-            </li>
-            <li>
-              <a href="#!" class="navbar-item">Contact Us</a>
+            <li v-for="(link, i) in links" :key="i">
+              <router-link :to="link.route" class="navbar-item">{{ link.name }}</router-link>
             </li>
           </ul>
         </div>
@@ -37,24 +28,9 @@
 
         <div class="social-links">
           <ul class="is-flex is-align-centered">
-            <li>
+            <li v-for="s in socialLinks" :key="s.id">
               <a href="#!" class="navbar-item">
-                <i class="fab fa-facebook-f"></i>
-              </a>
-            </li>
-            <li>
-              <a href="#!" class="navbar-item">
-                <i class="fab fa-twitter"></i>
-              </a>
-            </li>
-            <li>
-              <a href="#!" class="navbar-item">
-                <i class="fab fa-google"></i>
-              </a>
-            </li>
-            <li>
-              <a href="#!" class="navbar-item pr-0">
-                <i class="fab fa-pinterest"></i>
+                <i :class="s"></i>
               </a>
             </li>
           </ul>
@@ -68,7 +44,20 @@
 export default {
   name: "AppFooter",
   data() {
-    return {};
+    return {
+      links: [
+        { route: "/", name: "Home" },
+        { route: "/about", name: "About Us" },
+        { route: "/services", name: "Services" },
+        { route: "/contact", name: "Contact Us" }
+      ],
+      socialLinks: [
+        "fab fa-facebook-f",
+        "fab fa-twitter",
+        "fab fa-google",
+        "fab fa-pinterest"
+      ]
+    };
   }
 };
 </script>

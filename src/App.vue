@@ -1,10 +1,11 @@
 <template>
   <div id="app">
-    <AppTopNav />
-    <AppNavbar />
-    <!-- <MobileNav /> -->
-    <router-view></router-view>
-    <AppFooter />
+    <AppTopNav v-if="showError" />
+    <AppNavbar v-if="showError" />
+    <transition name="fade" mode="out-in">
+      <router-view />
+    </transition>
+    <AppFooter v-if="showError" />
   </div>
 </template>
 
@@ -21,6 +22,11 @@ export default {
     AppNavbar,
     // MobileNav,
     AppFooter
+  },
+  computed: {
+    showError() {
+      return this.$route.name !== "NotFound";
+    }
   }
 };
 </script>

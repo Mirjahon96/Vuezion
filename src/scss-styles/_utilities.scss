@@ -260,3 +260,32 @@ $spaceamounts: (0, 1, 2, 4, 8, 12, 16, 20, 24, 28, 30, 32, 40, 50);
     transform: translateY(-25px);
   }
 }
+
+.fade-enter-active {
+  animation: slidePageIn 1s forwards;
+}
+
+.fade-leave-active {
+  animation: slidePageRight 1s forwards;
+}
+
+@keyframes slidePageIn {
+  from {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
+
+@keyframes slidePageRight {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+}

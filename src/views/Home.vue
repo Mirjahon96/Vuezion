@@ -139,19 +139,19 @@ export default {
       // Stats
       statBoxes: [
         {
-          title: "575",
+          title: 575,
           text: "Increase in Leads"
         },
         {
-          title: "1540",
+          title: 1540,
           text: "Lift in ROI"
         },
         {
-          title: "110",
+          title: 110,
           text: "Increase in Conversions"
         },
         {
-          title: "90",
+          title: 90,
           text: "Decrease in ECPA"
         }
       ],

@@ -9,11 +9,13 @@
   },
   "dependencies": {
     "core-js": "^2.6.5",
+    "countup.js": "^2.0.5",
     "swiper": "^5.3.7",
     "vue": "^2.6.10",
     "vue-agile": "^1.1.0",
     "vue-awesome-swiper": "^4.1.1",
     "vue-carousel": "^0.18.0",
+    "vue-countup-v2": "^4.0.0",
     "vue-owl-carousel": "^2.0.3",
     "vue-router": "^3.0.3",
     "vue-simple-carousel": "^0.4.3",

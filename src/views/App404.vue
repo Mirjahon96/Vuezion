@@ -1,4 +1,4 @@
-<template>
+<template functional>
   <div id="404">
     <div class="container">
       <div class="columns has-text-centered">
@@ -17,6 +17,7 @@
 
 <script>
 export default {
+  functional: true,
   name: "NotFound"
 };
 </script>

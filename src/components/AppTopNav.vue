@@ -20,9 +20,9 @@
           </div>
 
           <div class="navbar-end">
-            <a href="#!" class="navbar-item">Login</a>
+            <router-link to="/login" class="navbar-item">Login</router-link>
             <span class="navbar-item is-size-7 is-paddingless">/</span>
-            <a href="#!" class="navbar-item">Register</a>
+            <router-link to="/register" class="navbar-item">Register</router-link>
             <div class="navbar-item py-0">
               <a
                 class="button is-green is-radiusless is-borderless is-bold fullheight"

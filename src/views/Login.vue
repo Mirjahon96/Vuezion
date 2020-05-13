@@ -19,28 +19,34 @@
         </div>
         <!-- 2 -->
         <div class="column">
-          <form class="form-box p-30">
-            <AppInput
-              v-for="(field, index) in fields"
-              :key="index"
-              styles="is-rounded is-medium"
-              :label="field.label"
-              :placeholder="field.placeholder"
-            />
-            <div class="field py-20">
-              <div class="control">
-                <button type="submit" class="btn btn-green btn-rounded btn-large">Login</button>
+          <keep-alive>
+            <form class="form-box p-30">
+              <AppInput
+                v-for="(field, index) in fields"
+                :key="index"
+                styles="is-rounded is-medium"
+                :label="field.label"
+                :placeholder="field.placeholder"
+                :type="field.type"
+              />
+              <div class="field py-20">
+                <div class="control">
+                  <button type="submit" class="btn btn-green btn-rounded btn-large">Login</button>
+                </div>
               </div>
-            </div>
-            <div class="is-flex is-justified-between">
-              <p class="has-text-weight-bold">Forgot Password?</p>
-              <p class="has-text-weight-bold has-text-right">
-                Don't Have an Account?
-                <br />
-                <router-link to="/login" class="has-text-green has-text-weight-bold">Register Now</router-link>
-              </p>
-            </div>
-          </form>
+              <div class="is-flex is-justified-between">
+                <p class="has-text-weight-bold">Forgot Password?</p>
+                <p class="has-text-weight-bold has-text-right">
+                  Don't Have an Account?
+                  <br />
+                  <router-link
+                    to="/register"
+                    class="has-text-green has-text-weight-bold"
+                  >Register Now</router-link>
+                </p>
+              </div>
+            </form>
+          </keep-alive>
         </div>
       </div>
     </div>
@@ -65,8 +71,8 @@ export default {
         { name: "fab fa-github", href: "#!" }
       ],
       fields: [
-        { label: "Email", placeholder: "Email" },
-        { label: "Password", placeholder: "Password" }
+        { label: "Email", placeholder: "Email", type: "email" },
+        { label: "Password", placeholder: "Password", type: "password" }
       ]
     };
   }

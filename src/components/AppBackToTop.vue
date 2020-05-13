@@ -1,8 +1,12 @@
 <template>
-  <div id="back-to-top">
-    <a href="#!" @click="toTop" class="backToTop">
-      Scroll Up
-      <i class="fas fa-arrow-up"></i>
+  <div class="backToTop">
+    <a
+      href="#!"
+      class="has-text-weight-bold has-text-white btn btn-green"
+      @scroll="onScroll()"
+      @click="toTop"
+    >
+      <i class="fas fa-long-arrow-alt-up"></i>
     </a>
   </div>
 </template>
@@ -22,17 +26,24 @@ export default {
       }
     },
     toTop() {
-      document.body.scrollTop = 0;
+      document.scrollTop = 0;
       document.documentElement.scrollTop = 0;
     }
+  },
+  created() {
+    window.addEventListener("scroll", this.onScroll);
+  },
+  destroyed() {
+    window.removeEventListener("scroll", this.onScroll);
   }
 };
 </script>
 
 <style lang="scss" scoped>
-#back-to-top {
-  position: absolute;
+.backToTop {
+  position: fixed;
   right: 40px;
-  bottom: 0;
+  bottom: 10px;
+  z-index: 200;
 }
 </style>

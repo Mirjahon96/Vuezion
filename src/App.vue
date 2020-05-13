@@ -5,6 +5,7 @@
     <transition name="fade" mode="out-in">
       <router-view />
     </transition>
+    <AppBackToTop />
     <AppFooter v-if="showError" />
   </div>
 </template>
@@ -12,7 +13,7 @@
 <script>
 import AppTopNav from "@/components/AppTopNav.vue";
 import AppNavbar from "@/components/AppNavbar.vue";
-// import MobileNav from "@/components/MobileNav.vue";
+import AppBackToTop from "@/components/AppBackToTop.vue";
 import AppFooter from "@/components/AppFooter.vue";
 
 export default {
@@ -20,7 +21,7 @@ export default {
   components: {
     AppTopNav,
     AppNavbar,
-    // MobileNav,
+    AppBackToTop,
     AppFooter
   },
   computed: {
@@ -33,6 +34,8 @@ export default {
 
 <style lang="scss">
 #app {
+  scroll-behavior: smooth !important;
+
   * {
     transition: linear 0.2s;
   }

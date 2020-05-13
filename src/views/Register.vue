@@ -26,6 +26,7 @@
               styles="is-rounded is-medium"
               :label="field.label"
               :placeholder="field.placeholder"
+              :type="field.type"
             />
             <div class="field py-20">
               <div class="control">
@@ -61,10 +62,14 @@ export default {
         { name: "fab fa-github", href: "#!" }
       ],
       fields: [
-        { label: "Name", placeholder: "Name" },
-        { label: "Email", placeholder: "Email" },
-        { label: "Password", placeholder: "Password" },
-        { label: "Confirm Password", placeholder: "Confirm Password" }
+        { label: "Name", placeholder: "Name", type: "text" },
+        { label: "Email", placeholder: "Email", type: "email" },
+        { label: "Password", placeholder: "Password", type: "password" },
+        {
+          label: "Confirm Password",
+          placeholder: "Confirm Password",
+          type: "password"
+        }
       ]
     };
   }

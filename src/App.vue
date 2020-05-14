@@ -34,8 +34,6 @@ export default {
 
 <style lang="scss">
 #app {
-  scroll-behavior: smooth !important;
-
   * {
     transition: linear 0.2s;
   }

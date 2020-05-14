@@ -98,6 +98,25 @@
       }
     }
   }
+
+  // Top Nav
+  #top-nav {
+    .navbar {
+      .navbar-menu {
+        display: flex;
+        box-shadow: none;
+        justify-content: center;
+
+        .navbar-start {
+          display: none;
+        }
+        .navbar-end {
+          display: flex;
+          align-items: center;
+        }
+      }
+    }
+  }
 }
 
 // Mobile

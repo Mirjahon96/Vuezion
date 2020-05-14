@@ -25,7 +25,7 @@
             <router-link to="/register" class="navbar-item">Register</router-link>
             <div class="navbar-item py-0">
               <a
-                class="button is-green is-radiusless is-borderless is-bold fullheight"
+                class="button is-green is-radiusless is-borderless is-bold is-fullheight"
               >Request a Demo</a>
             </div>
           </div>
